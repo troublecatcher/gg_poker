@@ -1,0 +1,1 @@
+enum Entity { player, dealer }

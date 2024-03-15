@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "213461460846",
+    "project_id": "gg-poker-b83a2",
+    "storage_bucket": "gg-poker-b83a2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:213461460846:android:d579dbfcc34e3b4398037f",
+        "android_client_info": {
+          "package_name": "com.example.gg_poker"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMfUzUwG04xQSnJF74SDGWT4BlKpUiNIY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
