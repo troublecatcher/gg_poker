@@ -1,9 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gg_poker/features/reward/logic/spinning_state_cubit.dart';
-import 'package:gg_poker/features/reward/ui/widgets/pointer.dart';
 import 'package:gg_poker/features/reward/ui/widgets/wheel.dart';
 import 'package:gg_poker/features/reward/ui/widgets/wheel_status_widget.dart';
 import 'package:gg_poker/theme/widgets/custom_app_bar.dart';

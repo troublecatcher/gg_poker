@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart' hide Chip;
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gg_poker/features/blackjack/betting/logic/bloc/betting_bloc.dart';
 
 class BettingChipAnimated extends StatefulWidget {

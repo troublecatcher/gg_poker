@@ -7,7 +7,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gg_poker/features/reward/logic/spin_cubit.dart';
 import 'package:gg_poker/features/reward/logic/spin_result_cubit.dart';
 import 'package:gg_poker/features/reward/logic/spinning_state_cubit.dart';
-import 'package:gg_poker/features/reward/ui/widgets/pointer.dart';
 import 'package:gg_poker/theme/const.dart';
 import 'package:kbspinningwheel/kbspinningwheel.dart';
 

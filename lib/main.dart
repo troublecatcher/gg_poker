@@ -12,7 +12,6 @@ import 'package:gg_poker/features/blackjack/game/logic/entity/dealer/dealer_cubi
 import 'package:gg_poker/features/blackjack/game/logic/entity/deck/deck_cubit.dart';
 import 'package:gg_poker/features/blackjack/game/logic/entity/player/player_cubit.dart';
 import 'package:gg_poker/features/dialog/logic/dialog_bloc/bloc/dialog_bloc.dart';
-import 'package:gg_poker/features/dialog/logic/dialog_manager_system.dart';
 import 'package:gg_poker/features/reward/logic/spin_cubit.dart';
 import 'package:gg_poker/features/reward/logic/spin_result_cubit.dart';
 import 'package:gg_poker/features/reward/logic/spinning_state_cubit.dart';

@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:gg_poker/features/balance/balance_cubit.dart';
 import 'package:gg_poker/features/dialog/logic/dialog_bloc/bloc/dialog_bloc.dart';
-import 'package:gg_poker/features/dialog/logic/dialog_manager_system.dart';
 import 'package:gg_poker/theme/const.dart';
 import 'package:gg_poker/theme/widgets/custom_container.dart';
 
