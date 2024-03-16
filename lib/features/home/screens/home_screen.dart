@@ -70,6 +70,7 @@ class _HomeScreenState extends State<HomeScreen>
   FutureOr<void> afterFirstLayout(BuildContext context) {
     if (isFirstTime!) {
       DialogFirstTime().showDialog(context);
+      isFirstTime = false;
     }
   }
 }
