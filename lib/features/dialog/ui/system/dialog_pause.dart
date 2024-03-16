@@ -21,10 +21,8 @@ class DialogPause extends Dialog {
           ),
           CustomButton(
               color: primaryRedColor,
-              children: const [
-                Icon(Icons.play_arrow_rounded),
-                Text('Back to game'),
-              ],
+              title: 'Back to game',
+              icon: const Icon(Icons.play_arrow_rounded),
               onPressed: () {
                 context.read<DialogBloc>().add(CloseEvent());
                 context.router.popForced();
@@ -32,9 +30,7 @@ class DialogPause extends Dialog {
           const SizedBox(height: 8),
           CustomButton(
               color: secondaryButtonColor,
-              children: const [
-                Text('Menu'),
-              ],
+              title: 'Menu',
               onPressed: () async {
                 context.router.popForced();
                 context.router.replace(const HomeRoute());

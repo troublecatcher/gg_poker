@@ -20,18 +20,14 @@ class DialogProfile extends Dialog {
           ),
           CustomButton(
               color: primaryRedColor,
-              children: const [
-                Icon(Icons.music_note_rounded),
-                Text('Music AW'),
-              ],
+              title: 'Music AW',
+              icon: const Icon(Icons.music_note_rounded),
               onPressed: () {}),
           const SizedBox(height: 8),
           CustomButton(
               color: secondaryButtonColor,
-              children: const [
-                Icon(Icons.list_alt_outlined),
-                Text('Terms of use'),
-              ],
+              title: 'Terms of use',
+              icon: const Icon(Icons.list_alt_outlined),
               onPressed: () {
                 context.router.popForced();
                 context.router.push(const TermsOfUseRoute());
@@ -39,10 +35,8 @@ class DialogProfile extends Dialog {
           const SizedBox(height: 8),
           CustomButton(
               color: secondaryButtonColor,
-              children: const [
-                Icon(Icons.privacy_tip_outlined),
-                Text('Privacy Policy'),
-              ],
+              title: 'Privacy Policy',
+              icon: const Icon(Icons.privacy_tip_outlined),
               onPressed: () {
                 context.router.popForced();
                 context.router.push(const PrivacyPolicyRoute());

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:gg_poker/features/balance/balance_cubit.dart';
-import 'package:gg_poker/features/blackjack/game/logic/game_bloc/game_bloc.dart';
 import 'package:gg_poker/features/dialog/logic/dialog_bloc/bloc/dialog_bloc.dart';
 import 'package:gg_poker/features/dialog/logic/dialog_manager_system.dart';
 import 'package:gg_poker/theme/const.dart';
@@ -30,7 +29,20 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         CustomContainer(
           child: BlocBuilder<BalanceCubit, int>(
             builder: (context, state) {
-              return Text(state.toString());
+              return Row(
+                children: [
+                  Image.asset(
+                    'assets/chips/biscuit.png',
+                    width: 20,
+                    height: 20,
+                  ),
+                  const SizedBox(width: 8),
+                  Text(
+                    state.toString(),
+                    style: Theme.of(context).textTheme.titleMedium,
+                  ),
+                ],
+              );
             },
           ),
         ),
@@ -44,7 +56,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             icon: Image.asset('assets/icons/person.png'),
             onPressed: () => context.read<DialogBloc>().add(ProfileEvent()),
           ),
-        )
+        ),
       ],
     );
   }

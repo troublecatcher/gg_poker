@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart' hide Card;
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:gg_poker/features/blackjack/game/logic/card/card.dart';
-import 'package:gg_poker/features/blackjack/game/logic/dealer_cubit/dealer_cubit.dart';
-import 'package:gg_poker/features/blackjack/game/logic/player_cubit/player_cubit.dart';
+import 'package:gg_poker/features/blackjack/game/logic/entity/card/card.dart';
+import 'package:gg_poker/features/blackjack/game/logic/entity/dealer/dealer_cubit.dart';
+import 'package:gg_poker/features/blackjack/game/logic/entity/player/player_cubit.dart';
 import 'package:gg_poker/theme/widgets/custom_container.dart';
 
 class Score extends StatelessWidget {
@@ -13,6 +13,7 @@ class Score extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         BlocBuilder<DealerCubit, List<Card>>(
           builder: (context, state) {

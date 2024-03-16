@@ -6,7 +6,6 @@ import 'package:gg_poker/features/dialog/widgets/button/dialog_menu_button.dart'
 import 'package:gg_poker/features/dialog/widgets/button/dialog_play_again_button.dart';
 import 'package:gg_poker/features/dialog/widgets/dialog_frame.dart';
 import 'package:gg_poker/features/dialog/widgets/dialog_title.dart';
-import 'package:gg_poker/theme/widgets/custom_container.dart';
 
 class DialogLose extends Dialog {
   void showDialog(BuildContext context, LoseState loseState) {

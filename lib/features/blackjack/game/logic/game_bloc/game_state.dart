@@ -9,6 +9,10 @@ final class BettingState extends GameState {}
 
 final class OngoingState extends GameState {}
 
+final class GivingPlayerCardState extends GameState {}
+
+final class GivingDealerCardState extends GameState {}
+
 abstract class WinState extends GameState {
   final String title = 'Good play!';
   final String action = '+';

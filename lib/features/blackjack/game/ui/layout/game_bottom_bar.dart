@@ -27,10 +27,8 @@ class GameBottomBar extends StatelessWidget {
                     onPressed: state is OngoingState
                         ? () => context.read<GameBloc>().add(HitEvent())
                         : null,
-                    children: const [
-                      Icon(Icons.library_add),
-                      Text('Hit'),
-                    ],
+                    title: 'Hit',
+                    icon: const Icon(Icons.library_add),
                   ),
                 ),
                 const SizedBox(width: 7),
@@ -40,10 +38,8 @@ class GameBottomBar extends StatelessWidget {
                     onPressed: state is OngoingState
                         ? () => context.read<GameBloc>().add(StandEvent())
                         : null,
-                    children: [
-                      SvgPicture.asset('assets/icons/stand.svg'),
-                      const Text('Stand'),
-                    ],
+                    title: 'Stand',
+                    icon: SvgPicture.asset('assets/icons/stand.svg'),
                   ),
                 ),
               ],

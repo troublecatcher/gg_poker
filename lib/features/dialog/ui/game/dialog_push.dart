@@ -12,7 +12,9 @@ class DialogPush extends Dialog {
         child: Column(
       children: [
         DialogTitle(pushState.title),
+        const SizedBox(height: 26),
         const DialogPlayAgainButton(),
+        const SizedBox(height: 8),
         const DialogMenuButton(),
       ],
     ));

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:gg_poker/features/blackjack/betting/logic/betting_cubit/betting_cubit.dart';
+import 'package:gg_poker/features/blackjack/betting/logic/bloc/betting_bloc.dart';
 import 'package:gg_poker/theme/widgets/custom_container.dart';
 
 class DialogBalanceUpdateInfo extends StatelessWidget {
@@ -28,7 +28,7 @@ class DialogBalanceUpdateInfo extends StatelessWidget {
           ),
           const SizedBox(width: 8),
           Text(
-            (context.read<BettingCubit>().sumOfChips() * multiplier).toString(),
+            (context.read<BettingBloc>().sumOfChips() * multiplier).toString(),
             style: Theme.of(context).textTheme.titleLarge,
           ),
         ],

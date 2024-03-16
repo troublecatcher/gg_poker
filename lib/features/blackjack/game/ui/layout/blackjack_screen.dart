@@ -40,24 +40,24 @@ class _BlackjackScreenState extends State<BlackjackScreen> {
   @override
   Widget build(BuildContext context) {
     context.read<GameBloc>().add(StartBettingEvent());
-    final width = MediaQuery.of(context).size.width;
+    final size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: greyColor,
       appBar: CustomAppBar(
-        width: width,
+        width: size.width,
         leading: IconButton(
             onPressed: () => context.read<DialogBloc>().add(PauseEvent()),
             icon: const Icon(Icons.menu_rounded)),
       ),
       body: SafeArea(
         child: Container(
-          color: blackColor,
+          color: semiBlackColor,
           child: BlocBuilder<GameBloc, GameState>(
             builder: (context, state) {
               if (state is BettingState) {
-                return BettingLayout(width: width);
+                return const BettingLayout();
               } else {
-                return GameLayout(width: width);
+                return const GameLayout();
               }
             },
           ),

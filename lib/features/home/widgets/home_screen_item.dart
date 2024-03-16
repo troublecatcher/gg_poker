@@ -14,7 +14,7 @@ class HomeScreenItem extends StatelessWidget {
   final String assetPath;
   final String title;
   final String buttonTitle;
-  final Function() onPressed;
+  final Function()? onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +55,7 @@ class HomeScreenItem extends StatelessWidget {
                     child: CustomButton(
                       color: yellowColor,
                       onPressed: onPressed,
-                      children: [Text(buttonTitle)],
+                      title: buttonTitle,
                     ),
                   )
                 ],

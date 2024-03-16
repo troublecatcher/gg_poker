@@ -1,16 +1,21 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart' hide Card;
-import 'package:gg_poker/features/blackjack/game/logic/card/card.dart';
-import 'package:gg_poker/features/blackjack/game/logic/card/value.dart';
+import 'package:gg_poker/features/blackjack/game/logic/entity/card/card.dart';
+import 'package:gg_poker/features/blackjack/game/logic/entity/card/value.dart';
 
-part 'player_state.dart';
+part 'dealer_state.dart';
 
-class PlayerCubit extends Cubit<List<Card>> {
-  PlayerCubit() : super([]);
+class DealerCubit extends Cubit<List<Card>> {
+  DealerCubit() : super([]);
+  getCard(Card card) {
+    emit([...state, card]);
+  }
 
-  getCard(Card card, [int handIndex = 0]) {
-    final newState = List.of(state);
-    newState.add(card);
+  void discloseCards() {
+    List<Card> newState = [];
+    for (var element in state) {
+      newState.add(element.copyWith(isDisclosed: true));
+    }
     emit(newState);
   }
 

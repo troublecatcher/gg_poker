@@ -14,10 +14,8 @@ class DialogPlayAgainButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomButton(
       color: primaryRedColor,
-      children: const [
-        Icon(Icons.play_arrow_rounded),
-        Text('Play again'),
-      ],
+      title: 'Play again',
+      icon: const Icon(Icons.play_arrow_rounded),
       onPressed: () {
         context.router.popForced();
         context.read<GameBloc>().add(RestartGameEvent());

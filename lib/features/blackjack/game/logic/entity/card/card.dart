@@ -1,5 +1,5 @@
-import 'package:gg_poker/features/blackjack/game/logic/card/suit.dart';
-import 'package:gg_poker/features/blackjack/game/logic/card/value.dart';
+import 'package:gg_poker/features/blackjack/game/logic/entity/card/suit.dart';
+import 'package:gg_poker/features/blackjack/game/logic/entity/card/value.dart';
 
 class Card {
   final Suit suit;

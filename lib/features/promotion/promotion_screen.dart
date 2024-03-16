@@ -10,6 +10,7 @@ class PromotionScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(title: const Text('Promotion')),
       body: SafeArea(
         bottom: false,
         child: InAppWebView(

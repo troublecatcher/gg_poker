@@ -2,7 +2,7 @@ import 'package:flutter/material.dart' hide Chip;
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:gg_poker/features/balance/balance_cubit.dart';
-import 'package:gg_poker/features/blackjack/betting/logic/betting_cubit/betting_cubit.dart';
+import 'package:gg_poker/features/blackjack/betting/logic/bloc/betting_bloc.dart';
 import 'package:gg_poker/features/blackjack/game/logic/game_bloc/game_bloc.dart';
 import 'package:gg_poker/theme/const.dart';
 import 'package:gg_poker/theme/widgets/custom_button.dart';
@@ -14,7 +14,7 @@ class BettingBottomBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<BettingCubit, List<Chip>>(
+    return BlocBuilder<BettingBloc, List<Chip>>(
       builder: (context, state) {
         return Container(
           color: greyColor,
@@ -27,21 +27,21 @@ class BettingBottomBar extends StatelessWidget {
                   Expanded(
                     child: CustomButton(
                         color: primaryRedColor,
-                        children: [
-                          SvgPicture.asset('assets/icons/all_in.svg'),
-                          const Text('All in'),
-                        ],
-                        onPressed: () => context.read<BettingCubit>().allIn()),
+                        title: 'All in',
+                        icon: SvgPicture.asset('assets/icons/all_in.svg'),
+                        onPressed: () => context
+                            .read<BettingBloc>()
+                            .add(AllInBettingEvent())),
                   )
                 else
                   Expanded(
                     child: CustomButton(
                         color: primaryRedColor,
-                        children: const [
-                          Icon(Icons.clear_rounded),
-                          Text('Clear bet'),
-                        ],
-                        onPressed: () => context.read<BettingCubit>().clear()),
+                        title: 'Clear bet',
+                        icon: const Icon(Icons.clear_rounded),
+                        onPressed: () => context
+                            .read<BettingBloc>()
+                            .add(ClearBettingEvent())),
                   ),
                 const SizedBox(width: 7),
                 Expanded(
@@ -50,14 +50,12 @@ class BettingBottomBar extends StatelessWidget {
                     onPressed: state.isNotEmpty
                         ? () {
                             context.read<BalanceCubit>().updateBalance(
-                                -context.read<BettingCubit>().sumOfChips());
+                                -context.read<BettingBloc>().sumOfChips());
                             context.read<GameBloc>().add(StartGameEvent());
                           }
                         : null,
-                    children: [
-                      SvgPicture.asset('assets/icons/deal.svg'),
-                      const Text('Deal'),
-                    ],
+                    title: 'Deal',
+                    icon: SvgPicture.asset('assets/icons/deal.svg'),
                   ),
                 ),
               ],

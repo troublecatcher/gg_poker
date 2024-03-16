@@ -15,9 +15,7 @@ class DialogMenuButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomButton(
       color: secondaryButtonColor,
-      children: const [
-        Text('Menu'),
-      ],
+      title: 'Menu',
       onPressed: () async {
         context.router.popForced();
         context.router.replace(const HomeRoute());

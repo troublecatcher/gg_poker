@@ -4,17 +4,22 @@ import 'package:gg_poker/theme/const.dart';
 class CustomButton extends StatelessWidget {
   final Color color;
   final Function()? onPressed;
-  final List<Widget> children;
+  final String title;
+  final Widget? icon;
 
   const CustomButton(
-      {super.key, required this.color, this.onPressed, required this.children});
+      {super.key,
+      required this.color,
+      this.onPressed,
+      required this.title,
+      this.icon});
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
         style: ElevatedButton.styleFrom(
             elevation: 0,
-            padding: EdgeInsets.symmetric(vertical: 5, horizontal: 15),
+            padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 15),
             backgroundColor: color,
             foregroundColor: Colors.white,
             disabledBackgroundColor: disabledButtonColor,
@@ -26,10 +31,21 @@ class CustomButton extends StatelessWidget {
         onPressed: onPressed,
         child: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: children,
-          ),
+          child: icon != null
+              ? Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    icon!,
+                    const SizedBox(width: 8),
+                    Text(title),
+                  ],
+                )
+              : Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(title),
+                  ],
+                ),
         ));
   }
 }

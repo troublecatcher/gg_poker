@@ -1,8 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart' hide Card;
-import 'package:gg_poker/features/blackjack/game/logic/card/card.dart';
-import 'package:gg_poker/features/blackjack/game/logic/card/suit.dart';
-import 'package:gg_poker/features/blackjack/game/logic/card/value.dart';
+import 'package:gg_poker/features/blackjack/game/logic/entity/card/card.dart';
+import 'package:gg_poker/features/blackjack/game/logic/entity/card/suit.dart';
+import 'package:gg_poker/features/blackjack/game/logic/entity/card/value.dart';
 
 part 'deck_state.dart';
 
