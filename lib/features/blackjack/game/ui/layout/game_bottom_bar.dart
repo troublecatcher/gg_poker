@@ -17,7 +17,7 @@ class GameBottomBar extends StatelessWidget {
       child: BlocBuilder<GameBloc, GameState>(
         builder: (context, state) {
           return Padding(
-            padding: const EdgeInsets.only(right: 22, left: 22, top: 20),
+            padding: const EdgeInsets.all(22),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [

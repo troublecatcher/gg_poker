@@ -1,8 +1,6 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
-import 'package:gg_poker/features/balance/balance_cubit.dart';
-import 'package:gg_poker/features/reward/logic/rewards.dart';
 import 'package:gg_poker/main.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

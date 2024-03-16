@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gg_poker/theme/const.dart';
 
 class CustomButton extends StatelessWidget {
@@ -19,7 +20,7 @@ class CustomButton extends StatelessWidget {
     return ElevatedButton(
         style: ElevatedButton.styleFrom(
             elevation: 0,
-            padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 15),
+            padding: EdgeInsets.symmetric(vertical: 5.h, horizontal: 15.w),
             backgroundColor: color,
             foregroundColor: Colors.white,
             disabledBackgroundColor: disabledButtonColor,

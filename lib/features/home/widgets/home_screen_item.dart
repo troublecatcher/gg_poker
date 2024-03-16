@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gg_poker/theme/const.dart';
 import 'package:gg_poker/theme/widgets/custom_button.dart';
 
@@ -29,9 +30,9 @@ class HomeScreenItem extends StatelessWidget {
               padding: const EdgeInsets.symmetric(vertical: 21, horizontal: 23),
               constraints: BoxConstraints(
                 maxWidth: size.width * 0.9,
-                maxHeight: size.height * 0.15,
+                maxHeight: 150.h,
                 minWidth: size.width * 0.9,
-                minHeight: size.height * 0.15,
+                minHeight: 150.h,
               ),
               decoration: const BoxDecoration(
                 gradient: LinearGradient(

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 const borderRadius = BorderRadius.all(Radius.circular(12));
-const padding = EdgeInsets.symmetric(vertical: 6, horizontal: 12);
+final padding = EdgeInsets.symmetric(vertical: 6.h, horizontal: 12.w);
 const primaryRedColor = Color.fromRGBO(189, 47, 42, 1);
 const pinkColor = Color.fromRGBO(234, 69, 116, 1);
 const secondaryRedColor = Color.fromRGBO(175, 34, 45, 1);

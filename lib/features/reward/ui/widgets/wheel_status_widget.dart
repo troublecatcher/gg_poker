@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gg_poker/features/reward/logic/rewards.dart';
-import 'package:gg_poker/features/reward/logic/spin_cubit.dart';
 import 'package:gg_poker/features/reward/logic/spin_result_cubit.dart';
 import 'package:gg_poker/theme/const.dart';
 

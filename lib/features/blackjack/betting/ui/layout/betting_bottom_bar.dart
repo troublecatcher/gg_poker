@@ -19,7 +19,7 @@ class BettingBottomBar extends StatelessWidget {
         return Container(
           color: greyColor,
           child: Padding(
-            padding: const EdgeInsets.only(right: 22, left: 22, top: 20),
+            padding: const EdgeInsets.all(22),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [

@@ -46,7 +46,8 @@ class _BlackjackScreenState extends State<BlackjackScreen> {
       appBar: CustomAppBar(
         width: size.width,
         leading: IconButton(
-            onPressed: () => context.read<DialogBloc>().add(PauseEvent()),
+            onPressed: () =>
+                context.read<DialogBloc>().add(PauseEvent(context: context)),
             icon: const Icon(Icons.menu_rounded)),
       ),
       body: SafeArea(

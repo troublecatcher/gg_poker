@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart' hide Dialog;
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gg_poker/features/blackjack/game/logic/game_bloc/game_bloc.dart';
 import 'package:gg_poker/features/dialog/ui/dialog.dart';
-import 'package:gg_poker/features/dialog/widgets/dialog_balance_update_info.dart';
-import 'package:gg_poker/features/dialog/widgets/button/dialog_menu_button.dart';
-import 'package:gg_poker/features/dialog/widgets/button/dialog_play_again_button.dart';
-import 'package:gg_poker/features/dialog/widgets/dialog_frame.dart';
-import 'package:gg_poker/features/dialog/widgets/dialog_title.dart';
+import 'package:gg_poker/features/dialog/ui/widgets/dialog_balance_update_info.dart';
+import 'package:gg_poker/features/dialog/ui/widgets/buttons/dialog_menu_button.dart';
+import 'package:gg_poker/features/dialog/ui/widgets/buttons/dialog_play_again_button.dart';
+import 'package:gg_poker/features/dialog/ui/widgets/dialog_frame.dart';
+import 'package:gg_poker/features/dialog/ui/widgets/dialog_title.dart';
 import 'package:gg_poker/theme/const.dart';
 
 class DialogWin extends Dialog {
   void showDialog(BuildContext context, WinState winState) {
     final size = MediaQuery.of(context).size;
     Widget widget = SizedBox(
-      height: size.height * .5,
+      height: size.height * .6,
       child: Stack(
         children: [
           Positioned(
@@ -22,6 +23,7 @@ class DialogWin extends Dialog {
               child: DialogFrame(
                 child: Column(
                   children: [
+                    SizedBox(height: 26.h),
                     DialogTitle(winState.title),
                     const SizedBox(height: 26),
                     DialogBalanceUpdateInfo(
@@ -36,10 +38,10 @@ class DialogWin extends Dialog {
                 ),
               )),
           Align(
-            alignment: const Alignment(0, -0.85),
+            alignment: const Alignment(0, -0.8),
             child: Container(
-              width: size.width * 0.25,
-              height: size.width * 0.25,
+              width: 100,
+              height: 100,
               decoration: const BoxDecoration(
                 shape: BoxShape.circle,
                 boxShadow: [

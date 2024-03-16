@@ -3,8 +3,11 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gg_poker/features/reward/logic/spin_cubit.dart';
 import 'package:gg_poker/features/reward/logic/spin_result_cubit.dart';
+import 'package:gg_poker/features/reward/logic/spinning_state_cubit.dart';
+import 'package:gg_poker/features/reward/ui/widgets/pointer.dart';
 import 'package:gg_poker/theme/const.dart';
 import 'package:kbspinningwheel/kbspinningwheel.dart';
 
@@ -37,30 +40,34 @@ class _WheelState extends State<Wheel> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Stack(
+      alignment: Alignment.center,
       children: [
-        Align(
-          alignment: Alignment.center,
-          child: SpinningWheel(
-            image: Image.asset(
-              'assets/reward/wheel.png',
-            ),
-            width: size.width,
-            height: size.width,
-            initialSpinAngle: 0,
-            spinResistance: 0.4,
-            canInteractWhileSpinning: false,
-            dividers: 20,
-            onUpdate: (_) {
-              _dividerController.add(_);
-            },
-            onEnd: (index) async {
-              context.read<SpinCubit>().setSpinState();
-              context.read<SpinResultCubit>().getReward(index);
-              _dividerController.add(index);
-            },
-            shouldStartOrStop: _wheelNotifier.stream,
-            stopSpin: true,
+        SpinningWheel(
+          image: Image.asset(
+            'assets/reward/wheel.png',
+            width: size.height / 3,
+            height: size.height / 3,
           ),
+          secondaryImage: Image.asset('assets/reward/pointer1.png'),
+          secondaryImageHeight: size.height / 3,
+          secondaryImageWidth: size.height / 3,
+          width: size.height / 3,
+          height: size.height / 3,
+          initialSpinAngle: 0,
+          spinResistance: 0.4,
+          canInteractWhileSpinning: false,
+          dividers: 20,
+          onUpdate: (_) {
+            _dividerController.add(_);
+          },
+          onEnd: (index) async {
+            context.read<SpinningStateCubit>().toggleSpin();
+            context.read<SpinCubit>().setSpinState();
+            context.read<SpinResultCubit>().getReward(index);
+            _dividerController.add(index);
+          },
+          shouldStartOrStop: _wheelNotifier.stream,
+          stopSpin: true,
         ),
         Align(
           alignment: Alignment.center,
@@ -72,7 +79,7 @@ class _WheelState extends State<Wheel> {
                     shape: BoxShape.circle, color: Colors.white),
                 child: InkWell(
                   child: MaterialButton(
-                    padding: EdgeInsets.all(size.width / 9),
+                    padding: EdgeInsets.all(35.sp),
                     color: pinkColor,
                     disabledColor: pinkColor,
                     shape: const CircleBorder(),
@@ -90,15 +97,12 @@ class _WheelState extends State<Wheel> {
             },
           ),
         ),
-        Align(
-          alignment: Alignment.bottomCenter,
-          child: Image.asset('assets/reward/pointer.png'),
-        ),
       ],
     );
   }
 
   void _spinWheel() {
+    context.read<SpinningStateCubit>().toggleSpin();
     context.read<SpinResultCubit>().nullify();
     context.read<SpinCubit>().setSpinState();
     _wheelNotifier.sink.add(_generateRandomVelocity());

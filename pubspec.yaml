@@ -7,6 +7,7 @@ environment:
   sdk: ">=3.2.6 <4.0.0"
 
 dependencies:
+  after_layout: ^1.2.0
   auto_route: ^7.9.0
   auto_route_generator: ^7.3.2
   bloc: ^8.1.3
@@ -20,10 +21,13 @@ dependencies:
   flutter_bloc: ^8.1.4
   flutter_custom_dialog: ^1.3.0
   flutter_inappwebview: ^6.0.0
+  flutter_native_splash: ^2.3.10
+  flutter_screenutil: ^5.9.0
   flutter_shake_animated: ^0.0.5
   flutter_svg: ^2.0.10+1
   get_it: ^7.6.7
   intl: ^0.19.0
+  just_audio: ^0.9.36
   kbspinningwheel: ^1.0.3
   shared_preferences: ^2.2.2
 
@@ -40,3 +44,7 @@ flutter:
     - assets/main/
     - assets/cards/
     - assets/reward/
+    - assets/
+
+flutter_native_splash:
+  background_image: "assets/splash.png"

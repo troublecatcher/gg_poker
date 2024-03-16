@@ -1,5 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:gg_poker/features/reward/logic/spinning_state_cubit.dart';
+import 'package:gg_poker/features/reward/ui/widgets/pointer.dart';
 import 'package:gg_poker/features/reward/ui/widgets/wheel.dart';
 import 'package:gg_poker/features/reward/ui/widgets/wheel_status_widget.dart';
 import 'package:gg_poker/theme/widgets/custom_app_bar.dart';
@@ -12,24 +16,28 @@ class RewardScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: CustomAppBar(width: size.width),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SizedBox(
-              height: size.height * 0.7,
-              child: const Stack(
-                children: [
-                  Align(
-                      alignment: Alignment.topCenter,
-                      child: WheelStatusWidget()),
-                  Align(alignment: Alignment.center, child: Wheel()),
-                ],
-              ),
-            ),
-          ],
+      appBar: CustomAppBar(
+        width: size.width,
+        leading: BlocBuilder<SpinningStateCubit, bool>(
+          builder: (context, spinning) {
+            if (spinning) {
+              return const SizedBox.shrink();
+            } else {
+              return const BackButton();
+            }
+          },
         ),
+      ),
+      body: const Stack(
+        children: [
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              WheelStatusWidget(),
+              Wheel(),
+            ],
+          ),
+        ],
       ),
     );
   }
